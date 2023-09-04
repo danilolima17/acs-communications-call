@@ -1,18 +1,33 @@
-export const getLocalStorageItem = (key: string): string | null => {
-    try {
-      const value = localStorage.getItem(key);
-      return value !== null ? JSON.parse(value) : null;
-    } catch (error) {
-      console.error(`Error getting localStorage item: ${key}`, error);
-      return null;
-    }
-  };
-  
-  export const setLocalStorageItem = (key: string, value: any): void => {
-    try {
-      localStorage.setItem(key, JSON.stringify(value));
-    } catch (error) {
-      console.error(`Error setting localStorage item: ${key}`, error);
-    }
-  };
+
+export const localStorageAvailable = typeof Storage !== 'undefined';
+
+export enum LocalStorageKeys {
+  DisplayName = 'DisplayName',
+  Theme = 'AzureCommunicationUI_Theme'
+}
+
+/**
+ * Get display name from local storage.
+ */
+export const getDisplayNameFromLocalStorage = (): string | null =>
+  window.localStorage.getItem(LocalStorageKeys.DisplayName);
+
+/**
+ * Save display name into local storage.
+ */
+export const saveDisplayNameToLocalStorage = (displayName: string): void =>
+  window.localStorage.setItem(LocalStorageKeys.DisplayName, displayName);
+
+/**
+ * Get theme from local storage.
+ */
+export const getThemeFromLocalStorage = (scopeId: string): string | null =>
+  window.localStorage.getItem(LocalStorageKeys.Theme + '_' + scopeId);
+
+/**
+ * Save theme into local storage.
+ */
+export const saveThemeToLocalStorage = (theme: string, scopeId: string): void =>
+  window.localStorage.setItem(LocalStorageKeys.Theme + '_' + scopeId, theme);
+
   
