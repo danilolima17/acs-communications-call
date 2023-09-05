@@ -14,7 +14,7 @@ import {
   upperStackTokens,
   videoCameraIconStyle,
   bottomStackFooterStyle
-} from '../../styles/EndCall.styles';
+} from '../styles/EndCall.styles';
 
 export interface CallErrorProps {
   title: string;

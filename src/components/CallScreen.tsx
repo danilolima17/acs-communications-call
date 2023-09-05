@@ -13,8 +13,8 @@ import {
 } from '@azure/communication-react';
 
 import React, { useCallback, useMemo, useRef } from 'react';
-import { createAutoRefreshingCredential } from '../../utils/credencial';
-import { WEB_APP_TITLE } from '../../utils/AppUtils';
+import { createAutoRefreshingCredential } from '../utils/credencial';
+import { WEB_APP_TITLE } from '../utils/AppUtils';
 import { CallCompositeContainer } from './CallCompositeContainer';
 
 export interface CallScreenProps {

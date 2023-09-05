@@ -4,7 +4,7 @@
 import React, { useState } from 'react';
 import { Stack, PrimaryButton, Image, ChoiceGroup, IChoiceGroupOption, Text, TextField } from '@fluentui/react';
 
-import heroSVG from '../../assets/hero.svg';
+// import heroSVG from '../../assets/hero.svg';
 import {
   imgStyle,
   infoContainerStyle,
@@ -17,11 +17,11 @@ import {
   headerStyle,
   teamsItemStyle,
   buttonStyle
-} from '../../styles/HomeScreen.styles';
+} from '../styles/HomeScreen.styles';
 
-import { ThemeSelector } from '../../theming/ThemeSelector';
-import { localStorageAvailable } from '../../utils/localStorage';
-import { getDisplayNameFromLocalStorage, saveDisplayNameToLocalStorage } from '../../utils/localStorage';
+import { ThemeSelector } from '../theming/ThemeSelector';
+import { localStorageAvailable } from '../utils/localStorage';
+import { getDisplayNameFromLocalStorage, saveDisplayNameToLocalStorage } from '../utils/localStorage';
 import { DisplayNameField } from './DisplayNameField';
 import { TeamsMeetingLinkLocator } from '@azure/communication-calling';
 
@@ -36,7 +36,7 @@ export interface HomeScreenProps {
 }
 
 export const HomeScreen = (props: HomeScreenProps): JSX.Element => {
-  const imageProps = { src: heroSVG.toString() };
+  // const imageProps = { src: heroSVG.toString() };
   const headerTitle = props.joiningExistingCall ? 'Join Call' : 'Start or join a call';
   const callOptionsGroupLabel = 'Select a call option';
   const buttonText = 'Next';
@@ -69,7 +69,7 @@ export const HomeScreen = (props: HomeScreenProps): JSX.Element => {
       tokens={containerTokens}
       className={containerStyle}
     >
-      <Image alt="Welcome to the ACS Calling sample app" className={imgStyle} {...imageProps} />
+      <Image alt="Welcome to the ACS Calling sample app" className={imgStyle}  />
       <Stack className={infoContainerStyle}>
         <Text role={'heading'} aria-level={1} className={headerStyle}>
           {headerTitle}

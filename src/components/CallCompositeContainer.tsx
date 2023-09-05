@@ -4,8 +4,8 @@
 import { CommonCallAdapter, CallComposite } from '@azure/communication-react';
 
 import { Spinner } from '@fluentui/react';
-import { useSwitchableFluentTheme } from '../../theming/SwitchableFluentThemeProvider';
-import { useIsMobile } from '../../utils/useIsMobile';
+import { useSwitchableFluentTheme } from '../theming/SwitchableFluentThemeProvider';
+import { useIsMobile } from '../utils/useIsMobile';
 import React, { useEffect } from 'react';
 
 import { CallScreenProps } from './CallScreen';

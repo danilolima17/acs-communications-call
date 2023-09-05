@@ -17,11 +17,11 @@ import {
 
 import { useIsMobile } from '../utils/useIsMobile';
 import { useSecondaryInstanceCheck } from '../utils/useSecondaryInstanceCheck';
-import { CallError } from '../pages/views/CallError';
-import { CallScreen } from '../pages/views/CallScreen';
-import { HomeScreen } from '../pages/views/HomeScreen';
-import { PageOpenInAnotherTab } from '../pages/views/PageOpenInAnotherTab';
-import { UnsupportedBrowserPage } from '../pages/views/UnsupportedBrowserPage';
+import { CallError } from '../components/CallError';
+import { CallScreen } from '../components/CallScreen';
+import { HomeScreen } from '../components/HomeScreen';
+import { PageOpenInAnotherTab } from '../components/PageOpenInAnotherTab';
+import { UnsupportedBrowserPage } from '../components/UnsupportedBrowserPage';
 
 setLogLevel('verbose');
 
