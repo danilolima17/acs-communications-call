@@ -21,16 +21,18 @@ export const CallCompositeContainer = (props: CallCompositeContainerProps): JSX.
   // This ensures the service knows the user intentionally left the call if the user
   // closed the browser tab during an active call.
   useEffect(() => {
-    const disposeAdapter = (): void => adapter?.dispose();
-    window.addEventListener('beforeunload', disposeAdapter);
-    return () => window.removeEventListener('beforeunload', disposeAdapter);
+    if (typeof window !== 'undefined') {
+      const disposeAdapter = (): void => adapter?.dispose();
+      window.addEventListener('beforeunload', disposeAdapter);
+      return () => window.removeEventListener('beforeunload', disposeAdapter);
+    }
   }, [adapter]);
 
   if (!adapter) {
     return <Spinner label={'Creating adapter'} ariaLive="assertive" labelPosition="top" />;
   }
 
-  const callInvitationUrl: string | undefined = window.location.href;
+  const callInvitationUrl: string | undefined = typeof window !== 'undefined' ? window.location.href : undefined;
 
   return (
     <CallComposite
